@@ -1,0 +1,7 @@
+result
+result-*
+/.pre-commit-config.yaml
+.vscode
+.envrc
+.direnv
+outputs
