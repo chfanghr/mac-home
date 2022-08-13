@@ -22,7 +22,6 @@
     wget
     pass
     openssl_3
-    yubikey-manager
     yubikey-personalization
     haskellPackages.hopenpgp-tools
     pinentry_mac
