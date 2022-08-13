@@ -136,7 +136,5 @@
       enable = true;
       enableAliases = true;
     };
-
-    gpg.enable = true;
   };
 }
