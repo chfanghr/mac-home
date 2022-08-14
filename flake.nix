@@ -41,7 +41,7 @@
 
       devShells.${system}.deafult = pkgs.mkShell {
         inherit (self.checks.${system}.pre-commit-check) shellHook;
-        packages = with pkgs; [ nixpkgs-fmt ];
+        packages = with pkgs; [ nixpkgs-fmt treefmt ];
       };
 
       homeConfigurations = {
