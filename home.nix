@@ -26,6 +26,11 @@
     haskellPackages.hopenpgp-tools
     pinentry_mac
 
+    # Haskell
+    cabal-install
+    haskellPackages.cabal-fmt
+    haskell.compiler.ghc924
+
     # Nix
     nix-du
     nix-tree
