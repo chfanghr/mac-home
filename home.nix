@@ -80,7 +80,9 @@
       plugins = with pkgs.vimPlugins; [
         {
           plugin = rainbow;
-          config = "let g:rainbow_active = 1";
+          config = ''
+            let g:rainbow_active = 1
+          '';
         }
         {
           plugin = haskell-vim;
