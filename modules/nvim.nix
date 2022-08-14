@@ -15,6 +15,13 @@
     coc = {
       enable = true;
       settings = {
+        suggest = {
+          noselect = true;
+          enablePreview = true;
+          enablePreselect = false;
+          disableKind = true;
+          coc.preferences.formatOnSaveFiletypes = [ "nix" ];
+        };
         languageserver = {
           nix = {
             command = "rnix-lsp";
@@ -29,8 +36,10 @@
               "BUILD.bazel"
               "cabal.config"
               "package.yaml"
+              "project.cabal"
+              "*.cabal"
             ];
-            filetypes = [ "hs" "lhs" "haskell" ];
+            filetypes = [ "hs" "lhs" "haskell" "lhaskell" ];
           };
         };
       };
@@ -55,23 +64,37 @@
           let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
         '';
       }
-      vim-airline
-      vim-airline-themes
+      {
+        plugin = vim-airline;
+        config = ''
+          let g:airline#extensions#tabline#enabled = 1
+        '';
+      }
+      {
+        plugin = vim-airline-themes;
+        config = ''
+          let g:airline_theme = 'violet'
+        '';
+      }
       nerdtree
       vim-nix
       vim-commentary
       coc-nvim
+      gitgutter
+      fugitive
     ];
 
     extraConfig = ''
       set number relativenumber
 
       set expandtab
+      set mouse=a
+      set clipboard^=unnamed,unnamedplus
+      set tabstop=2
       set shiftwidth=2
     '';
 
     viAlias = true;
     vimAlias = true;
   };
-
 }
