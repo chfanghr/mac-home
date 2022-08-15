@@ -25,6 +25,7 @@
     yubikey-personalization
     haskellPackages.hopenpgp-tools
     pinentry_mac
+    bazelisk
 
     # Haskell
     cabal-install
