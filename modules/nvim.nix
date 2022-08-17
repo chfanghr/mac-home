@@ -82,6 +82,7 @@
       coc-nvim
       gitgutter
       fugitive
+      undotree
     ];
 
     extraConfig = ''
