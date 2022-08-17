@@ -32,6 +32,10 @@
     cabal-install
     haskellPackages.cabal-fmt
     haskell.compiler.ghc924
+    haskellPackages.ghcup
+
+    # OCaml
+    opam
 
     # Nix
     nix-du
