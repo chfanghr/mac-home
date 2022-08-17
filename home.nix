@@ -26,6 +26,7 @@
     haskellPackages.hopenpgp-tools
     pinentry_mac
     bazelisk
+    tmate
 
     # Haskell
     cabal-install
