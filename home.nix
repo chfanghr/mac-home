@@ -32,7 +32,8 @@
     cabal-install
     haskellPackages.cabal-fmt
     haskell.compiler.ghc924
-    haskellPackages.ghcup
+    haskellPackages.haskell-language-server
+    haskellPackages.fourmolu
 
     # OCaml
     opam
