@@ -15,6 +15,16 @@
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zsh-you-should-use = {
+      url = "github:MichaelAquilina/zsh-you-should-use";
+      flake = false;
+    };
+
+    wakatime-zsh-plugin = {
+      url = "github:sobolevn/wakatime-zsh-plugin";
+      flake = false;
+    };
   };
 
   outputs = { self, pre-commit-hooks, nixpkgs, home-manager, ... }@inputs:
@@ -26,10 +36,27 @@
           allowUnfree = true;
           allowBroken = true;
         };
+        overlays = [ (import ./overlay.nix inputs) ];
       };
       username = "fanghr";
+      findModules = dir:
+        builtins.concatLists (builtins.attrValues (builtins.mapAttrs
+          (name: type:
+            if type == "regular" then [{
+              name = builtins.elemAt (builtins.match "(.*)\\.nix" name) 0;
+              value = dir + "/${name}";
+            }] else if (builtins.readDir (dir + "/${name}"))
+              ? "default.nix" then [{
+              inherit name;
+              value = dir + "/${name}";
+            }] else
+              findModules (dir + "/${name}"))
+          (builtins.readDir dir)));
+
     in
-    {
+    rec {
+      profiles = builtins.listToAttrs (findModules ./profiles);
+
       checks.${system} = {
         pre-commit-check = pre-commit-hooks.lib.${system}.run {
           src = ./.;
@@ -48,9 +75,15 @@
         ${username} = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
-          modules = [
-            ./home.nix
-            ./profiles/nvim.nix
+          modules = with profiles; [
+            base
+            nvim
+            tools
+            haskell
+            java
+            direnv
+            zsh
+            man
           ];
         };
       };

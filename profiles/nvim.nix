@@ -83,6 +83,7 @@
       gitgutter
       fugitive
       undotree
+      nvim-autopairs
     ];
 
     extraConfig = ''
@@ -100,5 +101,9 @@
 
     viAlias = true;
     vimAlias = true;
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
   };
 }
