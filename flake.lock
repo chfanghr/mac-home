@@ -105,7 +105,9 @@
         "flake-compat": "flake-compat",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "pre-commit-hooks": "pre-commit-hooks"
+        "pre-commit-hooks": "pre-commit-hooks",
+        "wakatime-zsh-plugin": "wakatime-zsh-plugin",
+        "zsh-you-should-use": "zsh-you-should-use"
       }
     },
     "utils": {
@@ -120,6 +122,38 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "wakatime-zsh-plugin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1651056467,
+        "narHash": "sha256-pA1VOkzbHQjmcI2skzB/OP5pXn8CFUz5Ok/GLC6KKXQ=",
+        "owner": "sobolevn",
+        "repo": "wakatime-zsh-plugin",
+        "rev": "69c6028b0c8f72e2afcfa5135b1af29afb49764a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sobolevn",
+        "repo": "wakatime-zsh-plugin",
+        "type": "github"
+      }
+    },
+    "zsh-you-should-use": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1656492197,
+        "narHash": "sha256-1NL/GcW656Qn8+OrJVESF2O+GzFxl44iZqXGSnymOB4=",
+        "owner": "MichaelAquilina",
+        "repo": "zsh-you-should-use",
+        "rev": "09d9aa2cad2b7caf48cce8f321ebbbf8f47ce1c3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MichaelAquilina",
+        "repo": "zsh-you-should-use",
         "type": "github"
       }
     }
