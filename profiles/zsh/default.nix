@@ -33,7 +33,7 @@
       }
       {
         name = "powerlevel10k-config";
-        src = ./.;
+        src = ./p10k;
         file = "p10k.zsh";
       }
       {
@@ -60,6 +60,10 @@
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
     initExtra = ''
+      if [[ -r "$HOME/.iterm2_shell_integration.zsh" ]]; then
+        source "$HOME/.iterm2_shell_integration.zsh"
+      fi
+
       export GPG_TTY="$(tty)"
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent
