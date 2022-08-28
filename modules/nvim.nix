@@ -93,6 +93,9 @@
       set clipboard^=unnamed,unnamedplus
       set tabstop=2
       set shiftwidth=2
+
+      vmap <leader>ca <Plug>(coc-codeaction-selected)
+      nmap <leader>ca <Plug>(coc-codeaction-cursor)
     '';
 
     viAlias = true;

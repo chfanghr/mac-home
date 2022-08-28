@@ -23,10 +23,24 @@
     pass
     openssl_3
     yubikey-personalization
-    haskellPackages.hopenpgp-tools
     pinentry_mac
     bazelisk
     tmate
+    mdbook
+    gitAndTools.git-ignore
+    niv
+    aria
+
+    # c/c++
+    clang
+    clang-tools
+    fmt
+
+    # dhall
+    dhall
+    dhall-lsp-server
+    dhall-nix
+    dhall-json
 
     # Haskell
     cabal-install
@@ -34,6 +48,10 @@
     haskell.compiler.ghc924
     haskellPackages.haskell-language-server
     haskellPackages.fourmolu
+    haskellPackages.hopenpgp-tools
+    haskellPackages.QuickCheck
+    haskellPackages.tasty-hunit
+    haskellPackages.tasty
 
     # OCaml
     opam
