@@ -50,7 +50,7 @@
 
           modules = [
             ./home.nix
-            ./modules/nvim.nix
+            ./profiles/nvim.nix
           ];
         };
       };
