@@ -30,8 +30,8 @@ let
     gitAndTools.git-ignore
 
     # c/c++
-    clang
-    clang-tools
+    clang_14
+    clang-tools_14
     cmake
     fmt
 
