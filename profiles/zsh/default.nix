@@ -67,6 +67,20 @@
       export GPG_TTY="$(tty)"
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent
+
+      function repl() {
+        source="$(nix flake prefetch --json "$1" | ${pkgs.jq}/bin/jq -r .storePath)"
+        TEMP="$(mktemp --suffix=.nix)"
+        echo "let self = builtins.getFlake \"$source\"; in self // self.legacyPackages.\''${builtins.currentSystem} or { } // self.packages.\''${builtins.currentSystem} or { }" > "$TEMP"
+        nix repl "$TEMP"
+        rm "$TEMP"
+      }
+
+      function ss() { nix shell "self#$1" }
+      function es() { nix edit "self#$1" }
+      function bs() { nix build "self#$1" }
+      function is() { nix search "self#$1" }
+      function rs() { repl self }
     '';
   };
 
