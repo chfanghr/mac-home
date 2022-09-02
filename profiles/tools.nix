@@ -34,6 +34,7 @@ let
     clang-tools_14
     cmake
     fmt
+    pkg-config
 
     # dhall
     dhall
