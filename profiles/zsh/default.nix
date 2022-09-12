@@ -81,6 +81,8 @@
       function bs() { nix build "self#$1" }
       function is() { nix search "self#$1" }
       function rs() { repl self }
+
+      source "$HOME/.cargo/env"
     '';
   };
 
