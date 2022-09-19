@@ -25,6 +25,7 @@ let
     htop
     jq
     bat
+    z3
 
     # git 
     gitAndTools.git-ignore
