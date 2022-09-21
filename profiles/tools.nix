@@ -26,6 +26,7 @@ let
     jq
     bat
     z3
+    tmux
 
     # git 
     gitAndTools.git-ignore
