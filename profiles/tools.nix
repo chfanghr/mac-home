@@ -28,6 +28,7 @@ let
     z3
     tmux
     ffmpeg_5
+    speedtest-cli
 
     # git 
     gitAndTools.git-ignore
