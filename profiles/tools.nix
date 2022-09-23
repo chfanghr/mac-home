@@ -27,6 +27,7 @@ let
     bat
     z3
     tmux
+    ffmpeg_5
 
     # git 
     gitAndTools.git-ignore
