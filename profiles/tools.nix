@@ -55,6 +55,10 @@ let
     nix-prefetch-git
     niv
     cachix
+
+    # common lisp
+    sbcl
+    lispPackages.quicklisp
   ];
 in
 {
