@@ -29,6 +29,7 @@ let
     tmux
     ffmpeg_5
     speedtest-cli
+    yt-dlp
 
     # git 
     gitAndTools.git-ignore
