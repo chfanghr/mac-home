@@ -61,6 +61,11 @@ let
     # common lisp
     sbcl
     lispPackages.quicklisp
+
+    # purescript
+    rosetta.purescript
+    rosetta.purescript-language-server
+    rosetta.spago
   ];
 in
 {
