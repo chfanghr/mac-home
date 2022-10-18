@@ -84,6 +84,7 @@
       fugitive
       undotree
       nvim-autopairs
+      purescript-vim
     ];
 
     extraConfig = ''
