@@ -84,6 +84,7 @@
             direnv
             zsh
             man
+            emacs
           ];
         };
       };
