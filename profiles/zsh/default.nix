@@ -82,7 +82,7 @@
       function is() { nix search "self#$1" }
       function rs() { repl self }
 
-      source "$HOME/.cargo/env"
+      # source "$HOME/.cargo/env"
 
       function hs-shell-with(){
        nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])" --run zsh 
