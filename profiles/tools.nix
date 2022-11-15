@@ -30,6 +30,7 @@ let
     ffmpeg_5
     speedtest-cli
     yt-dlp
+    gallery-dl
     rq
 
     # git 
