@@ -3,7 +3,6 @@
 let
   tools = with pkgs; [
     # formatters/linters
-    nixpkgs-fmt
     shfmt
     treefmt
     yamllint
@@ -53,6 +52,8 @@ let
     opam
 
     # nix
+    nixpkgs-fmt
+    alejandra
     nix-du
     nix-tree
     nix-prefetch-git
