@@ -1,6 +1,11 @@
-{ config, pkgs, libs, inputs, system, ... }:
-
 {
+  config,
+  pkgs,
+  libs,
+  inputs,
+  system,
+  ...
+}: {
   programs.neovim = {
     enable = true;
 
@@ -20,16 +25,16 @@
           enablePreview = true;
           enablePreselect = false;
           disableKind = true;
-          coc.preferences.formatOnSaveFiletypes = [ "nix" ];
+          coc.preferences.formatOnSaveFiletypes = ["nix"];
         };
         languageserver = {
           nix = {
             command = "rnix-lsp";
-            filetypes = [ "nix" ];
+            filetypes = ["nix"];
           };
           haskell = {
             command = "haskell-language-server";
-            args = [ "--lsp" ];
+            args = ["--lsp"];
             rootPatterns = [
               ".stack.yaml"
               ".hie-bios"
@@ -39,13 +44,13 @@
               "project.cabal"
               "*.cabal"
             ];
-            filetypes = [ "hs" "lhs" "haskell" "lhaskell" ];
+            filetypes = ["hs" "lhs" "haskell" "lhaskell"];
           };
           purescript = {
             command = "purescript-language-server";
-            args = [ "--stdio" ];
-            filetypes = [ "purescript" ];
-            rootPatterns = [ "bower.json" "psc-package.json" "spago.dhall" ];
+            args = ["--stdio"];
+            filetypes = ["purescript"];
+            rootPatterns = ["bower.json" "psc-package.json" "spago.dhall"];
             settings = {
               purescript = {
                 addSpagoSources = true;

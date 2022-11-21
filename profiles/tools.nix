@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   tools = with pkgs; [
     # formatters/linters
     shfmt
@@ -33,7 +35,7 @@ let
     rq
     mosh
 
-    # git 
+    # git
     gitAndTools.git-ignore
 
     # c/c++
@@ -70,7 +72,6 @@ let
     rosetta.purescript-language-server
     rosetta.spago
   ];
-in
-{
+in {
   home.packages = tools;
 }

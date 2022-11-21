@@ -27,69 +27,80 @@
     };
   };
 
-  outputs = { self, pre-commit-hooks, nixpkgs, home-manager, ... }@inputs:
-    let
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-          allowBroken = true;
-        };
-        overlays = [ (import ./overlay.nix inputs) ];
+  outputs = {
+    self,
+    pre-commit-hooks,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
+    system = "aarch64-darwin";
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
+        allowBroken = true;
       };
-      username = "fanghr";
-      findModules = dir:
-        builtins.concatLists (builtins.attrValues (builtins.mapAttrs
-          (name: type:
-            if type == "regular" then [{
+      overlays = [(import ./overlay.nix inputs)];
+    };
+    username = "fanghr";
+    findModules = dir:
+      builtins.concatLists (builtins.attrValues (builtins.mapAttrs
+        (name: type:
+          if type == "regular"
+          then [
+            {
               name = builtins.elemAt (builtins.match "(.*)\\.nix" name) 0;
               value = dir + "/${name}";
-            }] else if (builtins.readDir (dir + "/${name}"))
-              ? "default.nix" then [{
+            }
+          ]
+          else if
+            (builtins.readDir (dir + "/${name}"))
+            ? "default.nix"
+          then [
+            {
               inherit name;
               value = dir + "/${name}";
-            }] else
-              findModules (dir + "/${name}"))
-          (builtins.readDir dir)));
+            }
+          ]
+          else findModules (dir + "/${name}"))
+        (builtins.readDir dir)));
+  in rec {
+    profiles = builtins.listToAttrs (findModules ./profiles);
 
-    in
-    rec {
-      profiles = builtins.listToAttrs (findModules ./profiles);
-
-      checks.${system} = {
-        pre-commit-check = pre-commit-hooks.lib.${system}.run {
-          src = ./.;
-          hooks = {
-            nixpkgs-fmt.enable = true;
-          };
+    checks.${system} = {
+      pre-commit-check = pre-commit-hooks.lib.${system}.run {
+        src = ./.;
+        hooks = {
+          alejandra.enable = true;
         };
       };
-
-      devShells.${system}.deafult = pkgs.mkShell {
-        inherit (self.checks.${system}.pre-commit-check) shellHook;
-        packages = with pkgs; [ nixpkgs-fmt treefmt ];
-      };
-
-      homeConfigurations = {
-        ${username} = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = with profiles; [
-            base
-            nvim
-            tools
-            haskell
-            java
-            direnv
-            zsh
-            man
-            git
-          ];
-        };
-      };
-
-      ${username} = self.homeConfigurations.${username}.activationPackage;
-      packages.${system}.default = self.${username};
     };
+
+    devShells.${system}.deafult = pkgs.mkShell {
+      inherit (self.checks.${system}.pre-commit-check) shellHook;
+      packages = with pkgs; [alejandra treefmt];
+    };
+
+    homeConfigurations = {
+      ${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = with profiles; [
+          base
+          nvim
+          tools
+          haskell
+          java
+          direnv
+          zsh
+          man
+          git
+        ];
+      };
+    };
+
+    ${username} = self.homeConfigurations.${username}.activationPackage;
+    packages.${system}.default = self.${username};
+  };
 }

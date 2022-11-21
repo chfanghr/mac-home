@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -85,7 +87,7 @@
       # source "$HOME/.cargo/env"
 
       function hs-shell-with(){
-       nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])" --run zsh 
+       nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])" --run zsh
       }
     '';
   };

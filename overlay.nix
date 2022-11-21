@@ -1,11 +1,8 @@
-inputs: final: prev:
-
-let
+inputs: final: prev: let
   x86_64Pkgs = import inputs.nixpkgs {
     system = "x86_64-darwin";
   };
-in
-{
+in {
   zsh-you-should-use = inputs.zsh-you-should-use;
   zsh-wakatime = inputs.wakatime-zsh-plugin;
   rosetta = {
