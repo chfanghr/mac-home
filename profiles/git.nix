@@ -6,6 +6,9 @@
   programs.git = {
     enable = true;
 
+    userName = "Hongrui Fang";
+    userEmail = "chfanghr@gmail.com";
+
     package = pkgs.gitAndTools.gitFull;
 
     lfs.enable = true;
