@@ -31,6 +31,7 @@ let
     yt-dlp
     gallery-dl
     rq
+    mosh
 
     # git 
     gitAndTools.git-ignore
