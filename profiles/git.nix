@@ -40,6 +40,11 @@
     extraConfig = {
       core.autocrlf = "input";
       init.defaultBranch = "main";
+      "diff \"sopsdiffer\"".textconv = "sops -d";
     };
+
+    attributes = [
+      "*.yaml diff=sopsdiffer"
+    ];
   };
 }
