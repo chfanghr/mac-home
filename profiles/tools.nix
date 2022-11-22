@@ -34,6 +34,7 @@
     gallery-dl
     rq
     mosh
+    sops
 
     # git
     gitAndTools.git-ignore
