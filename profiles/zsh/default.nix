@@ -43,6 +43,11 @@
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
+      {
+        name = "wakatime-zsh-plugin";
+        src = pkgs.zsh-wakatime;
+        file = "wakatime.plugin.zsh";
+      }
     ];
     shellAliases = {
       "b" = "nix build";
