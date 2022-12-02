@@ -46,28 +46,27 @@
     username = "fanghr";
     findModules = dir:
       builtins.concatLists (builtins.attrValues (builtins.mapAttrs
-        (name: type:
-          if type == "regular"
-          then [
-            {
-              name = builtins.elemAt (builtins.match "(.*)\\.nix" name) 0;
-              value = dir + "/${name}";
-            }
-          ]
-          else if
-            (builtins.readDir (dir + "/${name}"))
-            ? "default.nix"
-          then [
-            {
-              inherit name;
-              value = dir + "/${name}";
-            }
-          ]
-          else findModules (dir + "/${name}"))
-        (builtins.readDir dir)));
-  in rec {
+      (name: type:
+        if type == "regular"
+        then [
+          {
+            name = builtins.elemAt (builtins.match "(.*)\\.nix" name) 0;
+            value = dir + "/${name}";
+          }
+        ]
+        else if
+          (builtins.readDir (dir + "/${name}"))
+          ? "default.nix"
+        then [
+          {
+            inherit name;
+            value = dir + "/${name}";
+          }
+        ]
+        else findModules (dir + "/${name}"))
+      (builtins.readDir dir)));
     profiles = builtins.listToAttrs (findModules ./profiles);
-
+  in rec {
     checks.${system} = {
       pre-commit-check = pre-commit-hooks.lib.${system}.run {
         src = ./.;
@@ -77,9 +76,9 @@
       };
     };
 
-    devShells.${system}.deafult = pkgs.mkShell {
+    devShells.${system}.default = pkgs.mkShell {
       inherit (self.checks.${system}.pre-commit-check) shellHook;
-      packages = with pkgs; [alejandra treefmt];
+      packages = with pkgs; [alejandra treefmt nil];
     };
 
     homeConfigurations = {
@@ -99,8 +98,5 @@
         ];
       };
     };
-
-    ${username} = self.homeConfigurations.${username}.activationPackage;
-    packages.${system}.default = self.${username};
   };
 }
