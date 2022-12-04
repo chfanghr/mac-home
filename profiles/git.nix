@@ -44,7 +44,7 @@
     };
 
     attributes = [
-      "*.yaml diff=sopsdiffer"
+      # "*.yaml diff=sopsdiffer"
     ];
   };
 }
