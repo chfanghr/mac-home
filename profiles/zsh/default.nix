@@ -94,6 +94,8 @@
       function hs-shell-with(){
        nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])" --run zsh
       }
+
+      ${pkgs.pueue}/bin/puqued -d >/dev/null 2&>1 || true
     '';
   };
 
