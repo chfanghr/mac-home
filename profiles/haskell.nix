@@ -14,6 +14,7 @@
       QuickCheck
       tasty-hunit
       tasty
+      gotta-go-fast
     ];
 
   haskellEnv =
