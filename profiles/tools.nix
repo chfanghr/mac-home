@@ -35,6 +35,8 @@
     rq
     mosh
     sops
+    nushell
+    pueue
 
     # git
     gitAndTools.git-ignore
