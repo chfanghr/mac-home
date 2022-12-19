@@ -125,6 +125,17 @@
 
       vmap <leader>ca <Plug>(coc-codeaction-selected)
       nmap <leader>ca <Plug>(coc-codeaction-cursor)
+
+      """""" Cursor Movement, For HHKB {{
+      " Arrow keys
+      inoremap <C-p> <Up>
+      inoremap <C-n> <Down>
+      inoremap <C-a> <Home>
+      inoremap <C-e> <End>
+
+      inoremap <M-b> <S-Left>
+      inoremap <M-f> <S-Right>
+      " }
     '';
 
     viAlias = true;
