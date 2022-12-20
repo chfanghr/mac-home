@@ -95,7 +95,7 @@
        nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])" --run zsh
       }
 
-      (cd "$HOME"; ${pkgs.pueue}/bin/puqued -d >/dev/null 2&>1 || true)
+      ${pkgs.pueue}/bin/pueued -d >/dev/null 2>&1 || true
     '';
   };
 
