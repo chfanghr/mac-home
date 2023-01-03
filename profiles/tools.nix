@@ -65,6 +65,7 @@
     nix-prefetch-git
     niv
     cachix
+    nix-output-monitor
 
     # common lisp
     sbcl
