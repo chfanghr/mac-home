@@ -5,7 +5,20 @@
   inputs,
   system,
   ...
-}: {
+}: let
+  cellular-automaton-nvim = with pkgs;
+    vimUtils.buildVimPluginFrom2Nix {
+      pname = "cellular-automaton.nvim";
+      version = "2023-01-12";
+      src = fetchFromGitHub {
+        owner = "Eandrju";
+        repo = "cellular-automaton.nvim";
+        rev = "15b0fed53d8f7e58e88eae8fb8c3a9537fe90bd1";
+        sha256 = "sha256-YFJ8TxxZH1ce+GCaogSJDLRT1gmGgh+KukKnzDFZWY8=";
+      };
+      meta.homepage = "https://github.com/Eandrju/cellular-automaton.nvim";
+    };
+in {
   programs.neovim = {
     enable = true;
 
@@ -112,6 +125,7 @@
       undotree
       nvim-autopairs
       purescript-vim
+      cellular-automaton-nvim
     ];
 
     extraConfig = ''
