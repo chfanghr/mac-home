@@ -9,7 +9,7 @@
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
 
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
 
     home-manager = {
       url = github:nix-community/home-manager;
