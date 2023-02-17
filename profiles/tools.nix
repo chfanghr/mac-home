@@ -38,6 +38,7 @@
     nushell
     pueue
     mosh
+    silicon
 
     # git
     gitAndTools.git-ignore
