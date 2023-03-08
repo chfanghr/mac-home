@@ -58,6 +58,7 @@
       "r" = "nix run";
       "f" = "nix search";
       "fs" = "nix search self";
+      "flush_routes" = "sudo route -n flush";
     };
     initExtraFirst = ''
       if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
