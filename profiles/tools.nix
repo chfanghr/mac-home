@@ -39,6 +39,7 @@
     pueue
     mosh
     silicon
+    cddl
 
     # git
     gitAndTools.git-ignore
