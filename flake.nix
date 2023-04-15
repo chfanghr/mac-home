@@ -9,7 +9,7 @@
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs?rev=65702964b39bcf6d5c6b5b898b7d73e08b94b13f";
 
     home-manager = {
       url = github:nix-community/home-manager;
@@ -89,7 +89,7 @@
           base
           nvim
           tools
-          # haskell
+          haskell
           java
           direnv
           zsh

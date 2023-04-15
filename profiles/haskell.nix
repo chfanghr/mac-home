@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  ghcVersion = "94";
+  ghcVersion = "925";
 
   dontCheck = pkgs.haskell.lib.dontCheck;
 
@@ -16,7 +16,6 @@
       QuickCheck
       tasty-hunit
       tasty
-      gotta-go-fast
     ];
 
   haskellEnv =
