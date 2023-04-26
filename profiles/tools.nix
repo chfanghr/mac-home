@@ -40,6 +40,7 @@
     mosh
     silicon
     cddl
+    postgresql
 
     # git
     gitAndTools.git-ignore
