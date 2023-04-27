@@ -72,15 +72,14 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "utils": "utils"
+        ]
       },
       "locked": {
-        "lastModified": 1681250798,
-        "narHash": "sha256-fQMROyKzPFBPqJy9J4ffywm02ZuqAI0GW1O1QibVpdQ=",
+        "lastModified": 1682535786,
+        "narHash": "sha256-NH2a8yB8V25cglvcHDrvaTLvohzMgGLLZ4vnXQn4vOw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "28698126bd825aff21cae9ffd15cf83e169051b0",
+        "rev": "d82c9af8175878a461a0fdf914e67cc446664570",
         "type": "github"
       },
       "original": {
@@ -123,11 +122,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1678898370,
-        "narHash": "sha256-xTICr1j+uat5hk9FyuPOFGxpWHdJRibwZC+ATi0RbtE=",
+        "lastModified": 1681303793,
+        "narHash": "sha256-JEdQHsYuCfRL2PICHlOiH/2ue3DwoxUX7DJ6zZxZXFk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ac718d02867a84b42522a0ece52d841188208f2c",
+        "rev": "fe2ecaf706a5907b5e54d979fbde4924d84b65fc",
         "type": "github"
       },
       "original": {
@@ -146,11 +145,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1681227715,
-        "narHash": "sha256-kQZOoTa177VF5uk1JK7bA9ZTU5g6d5IuDp/6YdxUWao=",
+        "lastModified": 1682326782,
+        "narHash": "sha256-wj7p7iEwQXAfTZ6QokAe0dMbpQk5u7ympDnaiPvbv1w=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "c77e64a5adab96866ea97449a5a7a327d4629828",
+        "rev": "56cd2d47a9c937be98ab225cf014b450f1533cdb",
         "type": "github"
       },
       "original": {
@@ -167,21 +166,6 @@
         "pre-commit-hooks": "pre-commit-hooks",
         "wakatime-zsh-plugin": "wakatime-zsh-plugin",
         "zsh-you-should-use": "zsh-you-should-use"
-      }
-    },
-    "utils": {
-      "locked": {
-        "lastModified": 1678901627,
-        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
       }
     },
     "wakatime-zsh-plugin": {
@@ -203,11 +187,11 @@
     "zsh-you-should-use": {
       "flake": false,
       "locked": {
-        "lastModified": 1674730812,
-        "narHash": "sha256-uUQ8E7CcjgBMPhdP6iA/PI5X+4SUr+/FpTrxckiob9Q=",
+        "lastModified": 1681926346,
+        "narHash": "sha256-lKs6DhG3x/oRA5AxnRT+odCZFenpS86wPnPqxLonV2E=",
         "owner": "MichaelAquilina",
         "repo": "zsh-you-should-use",
-        "rev": "c062be916d0307fd851023c7afdbf7894b6667b6",
+        "rev": "1f9cb008076d4f2011d5f814dfbcfbece94a99e0",
         "type": "github"
       },
       "original": {
