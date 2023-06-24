@@ -93,7 +93,7 @@
       # source "$HOME/.cargo/env"
 
       function hs-shell-with(){
-       nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])" --run zsh
+       nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])"
       }
 
       ${pkgs.pueue}/bin/pueued -d >/dev/null 2>&1 || true
