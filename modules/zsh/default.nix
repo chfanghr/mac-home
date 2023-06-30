@@ -8,7 +8,7 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableVteIntegration = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
 
     oh-my-zsh = {
       enable = true;
