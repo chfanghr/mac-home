@@ -65,7 +65,7 @@
           ]
           else findModules (dir + "/${name}"))
         (builtins.readDir dir)));
-    profiles = builtins.listToAttrs (findModules ./profiles);
+    modules = builtins.listToAttrs (findModules ./modules);
   in rec {
     checks.${system} = {
       pre-commit-check = pre-commit-hooks.lib.${system}.run {
@@ -85,7 +85,7 @@
       ${username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = with profiles; [
+        modules = with modules; [
           base
           nvim
           tools
