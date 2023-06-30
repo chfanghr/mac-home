@@ -70,6 +70,7 @@
     niv
     cachix
     nix-output-monitor
+    nil
 
     # common lisp
     sbcl
