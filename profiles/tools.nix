@@ -64,7 +64,7 @@
     # nix
     nixpkgs-fmt
     alejandra
-    nix-du
+    # nix-du
     nix-tree
     nix-prefetch-git
     niv
@@ -73,7 +73,7 @@
 
     # common lisp
     sbcl
-    lispPackages.quicklisp
+    # lispPackages.quicklisp
 
     # purescript
     rosetta.purescript
