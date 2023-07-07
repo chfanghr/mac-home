@@ -25,6 +25,8 @@
       url = "github:sobolevn/wakatime-zsh-plugin";
       flake = false;
     };
+
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
 
   outputs = {
@@ -32,6 +34,7 @@
     pre-commit-hooks,
     nixpkgs,
     home-manager,
+    nix-doom-emacs,
     ...
   } @ inputs: let
     system = "aarch64-darwin";
@@ -96,6 +99,8 @@
           man
           git
           helix
+          emacs
+          {imports = [nix-doom-emacs.hmModule];}
         ];
       };
     };
