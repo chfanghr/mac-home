@@ -10,5 +10,4 @@ in {
     purescript-language-server = x86_64Pkgs.nodePackages.purescript-language-server;
     spago = x86_64Pkgs.spago;
   };
-  sbcl = x86_64Pkgs.sbcl;
 }

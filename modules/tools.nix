@@ -73,7 +73,6 @@
     nil
 
     # common lisp
-    sbcl
     # lispPackages.quicklisp
 
     # purescript
