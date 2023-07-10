@@ -41,6 +41,7 @@
     silicon
     cddl
     postgresql
+    multimarkdown
 
     # git
     gitAndTools.git-ignore
@@ -64,6 +65,7 @@
     # nix
     nixpkgs-fmt
     alejandra
+
     # nix-du
     nix-tree
     nix-prefetch-git
