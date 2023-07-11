@@ -53,6 +53,9 @@
     fmt
     pkg-config
 
+    # rust
+    rustup
+
     # dhall
     dhall
     dhall-lsp-server
