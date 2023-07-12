@@ -42,6 +42,7 @@
     cddl
     postgresql
     multimarkdown
+    rsync
 
     # git
     gitAndTools.git-ignore
