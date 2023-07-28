@@ -85,6 +85,10 @@
     rosetta.purescript
     rosetta.purescript-language-server
     rosetta.spago
+
+    # Mina
+    nodejs-18_x
+    (pkgs.callPackage ./zk-cli.nix {})
   ];
 in {
   home.packages = tools;
