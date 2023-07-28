@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: let
+  purescript_latest = pkgs.callPackage ../pkgs/purescript.nix {};
   tools = with pkgs; [
     # formatters/linters
     shfmt
@@ -82,7 +83,7 @@
     # lispPackages.quicklisp
 
     # purescript
-    rosetta.purescript
+    purescript_latest
     rosetta.purescript-language-server
     rosetta.spago
 
