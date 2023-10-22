@@ -100,6 +100,8 @@
           git
           helix
           emacs
+          kitty
+          zellij
           {imports = [nix-doom-emacs.hmModule];}
         ];
       };
