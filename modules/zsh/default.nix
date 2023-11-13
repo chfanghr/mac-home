@@ -73,8 +73,8 @@
       fi
 
       export GPG_TTY="$(tty)"
-      export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-      gpgconf --launch gpg-agent
+      # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+      # gpgconf --launch gpg-agent
 
       function repl() {
         source="$(nix flake prefetch --json "$1" | ${pkgs.jq}/bin/jq -r .storePath)"
