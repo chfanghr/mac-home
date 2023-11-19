@@ -102,6 +102,7 @@
           emacs
           kitty
           zellij
+          alacritty
           {imports = [nix-doom-emacs.hmModule];}
         ];
       };
