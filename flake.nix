@@ -84,11 +84,9 @@
       packages = with pkgs; [alejandra treefmt nil];
     };
 
-    homeConfigurations = {
-      ${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = with modules; [
+    homeModules = {
+      ${username} = {
+        imports = with modules; [
           base
           nvim
           tools
@@ -103,8 +101,16 @@
           kitty
           zellij
           alacritty
-          {imports = [nix-doom-emacs.hmModule];}
+          nix-doom-emacs.hmModule
         ];
+      };
+    };
+
+    homeConfigurations = {
+      ${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [homeModules.${username}];
       };
     };
   };
