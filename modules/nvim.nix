@@ -7,7 +7,7 @@
   ...
 }: let
   cellular-automaton-nvim = with pkgs;
-    vimUtils.buildVimPluginFrom2Nix {
+    vimUtils.buildVimPlugin {
       pname = "cellular-automaton.nvim";
       version = "2023-01-12";
       src = fetchFromGitHub {

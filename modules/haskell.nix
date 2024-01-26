@@ -3,15 +3,12 @@
   pkgs,
   ...
 }: let
-  ghcVersion = "96";
-
-  dontCheck = pkgs.haskell.lib.dontCheck;
-
-  haskellPkgs = pkgs:
-    with pkgs; [
-      haskell-language-server
-      cabal-install
+  haskellPkgs = hpkgs:
+    with hpkgs; [
       mtl
+      transformers
+      containers
+      optics
       fourmolu
       QuickCheck
       tasty-hunit
@@ -19,10 +16,12 @@
     ];
 
   haskellEnv =
-    pkgs.haskell.packages."ghc${ghcVersion}".ghcWithHoogle
+    pkgs.haskellPackages.ghcWithHoogle
     haskellPkgs;
 in {
   home.packages = [
     haskellEnv
+    pkgs.haskell-language-server
+    pkgs.cabal-install
   ];
 }
