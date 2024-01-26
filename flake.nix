@@ -84,6 +84,8 @@
       packages = with pkgs; [alejandra treefmt nil];
     };
 
+    overlays.default = import ./overlay.nix inputs;
+
     homeModules = {
       ${username} = {
         imports = with modules; [

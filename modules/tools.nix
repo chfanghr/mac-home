@@ -84,8 +84,10 @@
 
     # purescript
     purescript_latest
-    rosetta.purescript-language-server
-    rosetta.spago
+    nodePackages.purescript-language-server
+    # rosetta.purescript-language-server
+    spago
+    # rosetta.spago
 
     # Mina
     nodejs-18_x
