@@ -92,7 +92,7 @@
           base
           nvim
           tools
-          # haskell
+          haskell
           java
           direnv
           zsh
