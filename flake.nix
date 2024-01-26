@@ -103,6 +103,7 @@
           kitty
           zellij
           alacritty
+          ssh
           nix-doom-emacs.hmModule
         ];
       };
