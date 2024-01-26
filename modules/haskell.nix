@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  ghcVersion = "925";
+  ghcVersion = "96";
 
   dontCheck = pkgs.haskell.lib.dontCheck;
 
