@@ -37,7 +37,6 @@
     mosh
     sops
     nushell
-    pueue
     mosh
     silicon
     cddl

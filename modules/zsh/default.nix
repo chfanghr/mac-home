@@ -98,8 +98,6 @@
        nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [ $* ])"
       }
 
-      ${pkgs.pueue}/bin/pueued -d >/dev/null 2>&1 || true
-
       if [ -e $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
     '';
   };
