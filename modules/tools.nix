@@ -91,7 +91,7 @@
 
     # Mina
     nodejs-18_x
-    (pkgs.callPackage ./zk-cli.nix {})
+    # (pkgs.callPackage ./zk-cli.nix {})
   ];
 in {
   home.packages = tools;
