@@ -65,7 +65,7 @@
     dhall-json
 
     # ocaml
-    opam
+    # opam
 
     # nix
     nixpkgs-fmt
