@@ -86,7 +86,7 @@
     purescript_latest
     nodePackages.purescript-language-server
     # rosetta.purescript-language-server
-    spago
+    # spago
     # rosetta.spago
 
     # Mina
