@@ -4,7 +4,12 @@
     controlMaster = "auto";
     includes = [
       "~/.orbstack/ssh/config"
-      "~/.ssh/config.vscode"
     ];
+    matchBlocks = {
+      "demeter.vscode" = {
+        hostname = "demeter";
+        user = "fanghr";
+      };
+    };
   };
 }
