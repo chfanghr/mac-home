@@ -105,6 +105,7 @@
           alacritty
           ssh
           nix-doom-emacs.hmModule
+          autossh
         ];
       };
     };
