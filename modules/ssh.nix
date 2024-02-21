@@ -11,6 +11,10 @@
         hostname = "demeter";
         user = "fanghr";
       };
+      "demeter.local" = {
+        hostname = "demeter.local";
+        user = "fanghr";
+      };
     };
   };
 }
