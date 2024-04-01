@@ -99,6 +99,8 @@
       }
 
       if [ -e $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
+
+      alias tailscale=/Applications/Tailscale.app/Contents/MacOS/Tailscale
     '';
   };
 
