@@ -27,6 +27,10 @@
     };
 
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
+    nixvim.url = "github:nix-community/nixvim";
+
+    nvim.url = "git+ssh://git@github.com/chfanghr/nvim.git";
   };
 
   outputs = {
@@ -35,6 +39,8 @@
     nixpkgs,
     home-manager,
     nix-doom-emacs,
+    nixvim,
+    nvim,
     ...
   } @ inputs: let
     system = "aarch64-darwin";
@@ -106,6 +112,8 @@
           ssh
           # nix-doom-emacs.hmModule
           autossh
+          nixvim.homeManagerModules.nixvim
+          {programs.nixvim = {enable = true;} // nvim.nvimModules.default;}
         ];
       };
     };
