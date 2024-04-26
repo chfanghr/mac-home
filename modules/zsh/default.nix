@@ -58,7 +58,8 @@
       "r" = "nix run";
       "f" = "nix search";
       "fs" = "nix search self";
-      "flush_routes" = "sudo route -n flush";
+      "flush-routes" = "sudo route -n flush";
+      "fuck-audio" = "sudo pkill coreaudiod";
     };
     initExtraFirst = ''
       typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
