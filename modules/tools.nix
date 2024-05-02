@@ -43,6 +43,7 @@
     postgresql
     multimarkdown
     rsync
+    mosh
 
     # git
     gitAndTools.git-ignore
