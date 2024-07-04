@@ -92,6 +92,9 @@
     # Mina
     nodejs-18_x
     # (pkgs.callPackage ./zk-cli.nix {})
+
+    # Minecraft
+    prismlauncher
   ];
 in {
   home.packages = tools;
